@@ -51,11 +51,11 @@ def integrate(function, lower, upper):
 		to integrate given as a string.
 	"""
 	if function.find('x') == -1:
-		return
+		raise ValueError
 	if lower > upper:
-		return
+		raise ValueError
 	rep, _ = quad(lambda x: eval(function, {'x':x}), lower, upper)
-	return round(rep, 10)
+	return rep
 
 if __name__ == '__main__':
 	print(fact(5))

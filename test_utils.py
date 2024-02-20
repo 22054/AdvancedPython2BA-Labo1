@@ -10,4 +10,4 @@ def test_roots():
     assert utils.roots(2, 3, 3) == tuple()
 
 def test_integrate():
-    assert utils.integrate('x**2 - 2*x', 1, 4) == 6
+    assert abs(utils.integrate('x**2 - 2*x', 1, 4) - 6) < 0.0000001

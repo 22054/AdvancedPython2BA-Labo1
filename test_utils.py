@@ -10,5 +10,4 @@ def test_roots():
     assert utils.roots(2, 3, 3) == ()
 
 def test_integrate():
-    # À compléter...
-    pass
+    assert utils.integrate('x^2 - 2x', 1, 4) == 6

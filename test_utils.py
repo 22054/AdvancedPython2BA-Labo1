@@ -3,6 +3,8 @@ import utils
 
 def test_fact():
     assert utils.fact(5) == 120
+    with pytest.raises(ValueError):
+        utils.fact(-3)
 
 def test_roots():
     assert utils.roots(1, 2, 1) == tuple([-1])

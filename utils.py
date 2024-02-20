@@ -1,4 +1,4 @@
-from scipy import integrate as integr
+from scipy.integrate import quad
 from math import sqrt
 
 def fact(n):
@@ -50,7 +50,12 @@ def integrate(function, lower, upper):
 		you'll probably need the 'eval' function to evaluate the function
 		to integrate given as a string.
 	"""
-	pass
+	if function.find('x') == -1:
+		return
+	if lower > upper:
+		return
+	rep, _ = quad(lambda x: eval(function, {'x':x}), lower, upper)
+	return round(rep, 10)
 
 if __name__ == '__main__':
 	print(fact(5))

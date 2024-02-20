@@ -1,3 +1,5 @@
+from scipy import integrate as integr
+
 def fact(n):
 	"""Computes the factorial of a natural number.
 	
@@ -5,7 +7,12 @@ def fact(n):
 	Post: Returns the factorial of 'n'.
 	Throws: ValueError if n < 0
 	"""
-	pass
+	if n<0:
+		raise ValueError
+	f = 1
+	for i in range(2, n+1):
+		f *= i
+	return f
 
 def roots(a, b, c):
 	"""Computes the roots of the ax^2 + bx + x = 0 polynomial.
@@ -21,7 +28,7 @@ def integrate(function, lower, upper):
 	
 	Pre: 'function' is a valid Python expression with x as a variable,
 		'lower' <= 'upper',
-		'function' continuous and integrable between 'lower‘ and 'upper'.
+		'function' continuous and integrable between 'lower' and 'upper'.
 	Post: Returns an approximation of the integral from 'lower' to 'upper'
 		of the specified 'function'.
 

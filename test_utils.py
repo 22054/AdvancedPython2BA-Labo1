@@ -11,6 +11,7 @@ def test_roots():
     assert utils.roots(2, 0, -2) == tuple([-1, 1])
     assert utils.roots(2, 3, 3) == tuple()
     assert utils.roots(0, 0, 1) == tuple()
+    assert utils.roots(0, 3, -6) == tuple([2])
 
 def test_integrate():
     assert abs(utils.integrate('x**2 - 2*x', 1, 4) - 6) < 0.0000001

@@ -23,8 +23,11 @@ def roots(a, b, c):
 		to the roots of the ax^2 + bx + c polynomial.
 	"""
 	delta = b**2 - 4*a*c
-	if delta < 0 or a == 0:
+	if delta < 0 or (a == 0 and b==0):
 		return tuple()
+	if a == 0: # 1 deg
+		rep = -c/b
+		return tuple([rep])
 	if delta == 0:
 		rep = -b/(2*a)
 		return tuple([rep])

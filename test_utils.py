@@ -2,7 +2,7 @@ import pytest
 import utils
 
 def test_fact():
-    # À compléter...
+    assert utils.fact(5) == 120
     pass
 
 def test_roots():
